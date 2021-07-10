@@ -1,0 +1,768 @@
+:root{
+  --bg:rgb(242, 239, 253);
+  --whiteImage:rgb(171, 161, 255);
+  --blue:rgb(14, 0, 24);
+  --smallBorder:0px 0px 3px 0px rgb(232, 232, 252);
+}
+body{
+  padding:0;
+  margin:0;
+  background:var(--bg);
+}
+.flexBetween{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.flexRound{
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+}
+.flexStart{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+.flexEnd{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+}
+
+.flexCenter{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+button,input,textarea{
+  background:none;
+  border:none;
+  outline:none;
+}
+.body{
+  width:100%;
+  height:100%;
+  position:fixed;
+  display:flex;
+  align-items:center;
+justify-content:space-between;
+overflow-y:auto;
+padding:0;
+margin:0;
+}
+.chats,.user,.list{
+  height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.user,.list{
+  width:0;
+  display:none;
+ }
+*{
+  transition:all;
+  transition-duration:600ms;
+  box-sizing: border-box;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+.chats{
+  background:white;
+  padding-bottom:30px;
+}
+.chats,#input{
+  padding:10px;
+  width:100%;
+  min-width:300px;
+ }
+#input{
+  position:fixed;
+  bottom:0;
+ }
+#input .cntnt{
+  margin:0 auto;
+ background:white;
+width:100%;
+min-width:340px;
+padding:5px;
+height:100%;
+}
+#viewsCtn{
+  width:100%;
+}
+#input .cntnt .flexRound{
+  width:100%;
+}
+.chats #board{
+  width:100%;
+  height:90%;
+  max-height:90%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:var(--bg);
+  margin:0 auto;
+  padding-bottom:100px !important;
+}
+
+.chats #board #message{
+  width:100%;
+}
+#message *{
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#message span{
+  color:rgb(46, 46, 46);
+ }
+ #message #othersName{
+   color:rgb(107, 99, 117);
+ }
+.chats #board #message img{
+  width:30px;
+  height:30px;
+  min-width:30px !important;
+  border-radius:15px;
+}
+
+.chats #board #message .content{
+  display:flex;
+  background:white;
+  box-shadow:1px 1px 10px 0px lightgrey;
+  border-radius: 10px;
+  max-width:90% !important;
+  margin-left:2px;
+  flex-flow:row nowrap;
+}
+.chats #board #message:hover>img{
+  transition-delay:200ms;
+  border:1px solid var(--blue);
+}
+.chats #board #message #mine{
+  margin-left:2px;
+}
+.chats #board #message #mineContent{
+  background:rgb(19, 133, 25);
+  color:white;
+}
+.chats #board #message #join{
+  text-align:center;
+  display:block;
+  background:none;
+   box-shadow:none;
+   color:rgb(93, 93, 94) !important;
+  font-size:small !important;
+
+}
+#board .flexCenter span{
+  color:rgb(93, 93, 94) !important;
+  font-size:small !important;
+}
+#menu div{
+position:absolute;
+right:0;
+background:var(--bg);
+border-radius:10px 0px 10px 10px;
+box-shadow:1px 1px 10px 0px rgb(177, 177, 179);
+overflow:hidden;
+height:0;
+width:0;
+visibility:hidden;
+transition-duration:600ms;
+}
+#menu:hover>div{
+  height:auto;
+  width:150px;
+  visibility:visible;
+}
+#menu div button{
+  width:100%;
+  padding:10px 5px;
+  text-align:left !important;
+  display:flex;
+  justify-content:space-between;
+}
+#menu div button:hover{
+  background:var(--blue);
+  color:white;
+ }
+#userImg{
+    padding:3px;
+}
+.body div{
+  padding:5px;
+}
+#topNav{
+  padding:none;
+  background:none;
+  box-shadow:0px 17px 30px 0px rgb(192, 178, 231);
+  }
+ #topNav *:hover{
+   color:rgb(245, 5, 125);
+ }
+#topNav img{
+  width:20px;
+  height:20px;
+  border-radius:10px;
+  margin-left:-4px;
+}
+img{
+  background-color:var(--whiteImage);
+}
+img:hover{
+  border:1px solid var(--bg);
+}
+#userImg img{
+  width:50px;
+  height:50px;
+  border-radius:25px;
+min-width:50px !important;
+}
+#search{
+  margin:0 auto;
+  width:94%;
+  border-radius:5px;
+  background:white;
+  transform:tanslate(0px,-10px);
+  padding:2px 4px;
+  height:max-content;
+  }
+  #search input{
+width:98%;
+    height:100%;
+  }
+  #search:hover>input{
+height:100%;
+background:var(--bg);
+width:86%;
+  }
+  #search button{
+    background:var(--blue);
+    padding:6px;
+  color:white;
+  border-radius:2px;
+  }
+  #search button:hover{
+    background:rgb(212, 0, 255);
+    
+  }
+  #userImageP,#img{
+    width:40px;
+    height:40px;
+    min-width:40px !important;
+    border-radius:20px;
+    background-color:var(--bg);
+    border:3px solid rgb(216, 214, 247);
+box-sizing:border-box;
+background-size:100% 100%;
+background-image:none;
+  }
+  #img .fa{
+color:rgb(5, 224, 5);
+border-radius:10px;
+margin:80% 80%;
+
+  }
+  .nav{
+    width:104%;
+    margin-left:-10px;
+  }
+  .nav .fa{
+    color:rgb(5, 224, 5);
+  }
+  
+  .list p{
+    text-align:left;
+    padding-left:10px;
+    font-size:small;
+    color:rgb(44, 43, 43);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+   }
+   #allUsersCtn{
+     width:94%;
+     height:90%;
+     background:white;
+     margin:0 auto;
+     box-shadow:var(--smallBorder);
+     border-radius:20px 20px 0px 0px;
+    border-top:30px solid var(--blue);
+     border-left:1px solid rgb(201, 164, 250);
+     overflow-y:auto;
+     overflow-x:hidden;
+      }
+         .fa{
+     cursor:pointer;
+   }
+   #allUsersCtn #member{
+     width:98%;
+     padding:3px;
+     box-shadow:0px 0px 4px 0px var(--bg),
+     2px 2px 3px 0px rgb(238, 238, 240);
+     border-bottom:1px solid rgb(116, 116, 277);
+     }
+   
+
+   #allUsersCtn #member:hover{
+background:rgb(13, 3, 29);
+color:white;
+   }
+   #allUsersCtn #member:hover> * {
+     color:white !important;
+   }
+   #allUsersCtn #member button{
+     color:rgb(0, 17, 255);
+   }
+   #allUsersCtn #member #allName{
+    color:rgb(105, 101, 101);
+    width:90%;
+  }
+  
+   .user{
+     background-color:var(--blue);
+     width:0;
+     background-color:var(--blue);
+     background-size:100% 100%;
+   background-image:url("image/bb.png");
+   }
+   .user .bg{
+width:100%;
+height:100%;
+background:rgba(7, 0, 17, 0.863);
+padding:10px;
+   }
+   .user .fa:hover{
+     color:white  !important;
+   }
+   .user *{
+     color:white;
+     }
+   .user #profileImage{
+width:100%;
+height:50%;
+margin:0 auto;
+max-height:300px;
+max-width:300px;
+padding:15px;
+   }
+   .img,#img{
+     background-size:100% 100%;
+   }
+   #profileImage .img{
+     width:50%;
+     height:50%;
+    border-radius:10px 30px 10px 30px;
+    padding:10px;
+    box-sizing:padding-box;
+    background-color:rgba(231, 217, 253, 0.342);
+    background-size:100% 100%;
+    background-image:none;
+   }
+   #profileImage .img .fa{
+     color:rgb(16, 247, 8);
+     margin:70% 98% ;
+border:2px solid rgb(253, 251, 251);
+border-radius:10px;
+padding:1px;
+   }
+   #topNav #fa{
+    color:rgb(13, 199, 7) !important;
+   }
+   .user #name{
+     background:rgba(231, 217, 253, 0.342);
+     width:98%;
+     margin:0 auto;
+     padding:10px;
+     justify-content:flex-start;
+     color:rgb(235, 255, 239);
+     border-radius:5px;
+   }
+   .user .update{
+padding:4px;
+background:rgb(224, 224, 252);
+    border-radius:10px;
+    width:80%;
+    margin:10px 10%;
+    font-size:larger;
+    color:black;
+  }
+  .user .update:hover{
+background:rgb(252, 224, 236);
+color:rgb(90, 1, 255);
+  }
+   .user #name{
+     flex-flow:row nowrap;
+   }
+   .user #name .edit{
+     padding-left:10px;
+     
+     width:80%;
+     height:100%;
+
+   }
+   
+   .user #name .edit:hover{
+      color:white;
+   }
+    #input *{
+      color:var(--blue);
+    }
+   #input textarea{
+     height:40px;
+     width:85%;
+     border-radius:20px;
+    background:var(--bg);
+   padding:10px;
+   color:rgb(2, 1, 1);
+   resize:none;
+   overflow:auto;
+   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+   #input div{
+    width:100%;
+   }
+  
+   #input #send{
+     transform:rotate(45deg);
+     font-size:larger;
+     color:rgb(11, 156, 18);
+   }
+   #input #send:hover{
+     color:rgb(255, 130, 192);
+   }
+  
+   #typing span{
+    padding:0px 10px;
+    border-radius:10px;
+   color:dimgrey;
+   }
+   #typing img{
+width:30px;
+min-width:20px !important;
+min-height:20px !important;
+height:30px;
+border-radius:15px;
+background-color:var(--whiteImage);
+   }
+   #viewUser,#login{
+     width:100%;
+     height:100%;
+     position:fixed;
+     background:rgba(231, 217, 253, 0.575);
+     display:none;
+   }
+  
+   #viewUser button{
+     background:rgb(219, 38, 255);
+     width: 60%;
+     padding:5px 10px;
+     border-radius:5px;
+     font-size:large;
+   }
+   #viewUser button:hover{
+     background:rgba(81, 0, 97, 0.925);
+   }
+   button:active{
+     color:rgb(255, 0, 34);
+   }
+   #viewUser #ctn img{
+     width:150px;
+     height:150px;
+     border-radius:10px 45px 10px 45px;
+     padding:10px;
+     margin:15px 0;
+     background-color:rgba(231, 217, 253, 0.342);
+   
+   }
+   #viewUser #ctn span,#login h3{
+     font-size:x-large;
+     font-family: 'Times New Roman', Times, serif;
+   }
+   #viewUser #ctn{
+background:var(--blue);
+width:90%;
+max-width:300px;
+height:300px;
+border-radius:20px;
+text-align:center;
+   }
+   #viewUser #ctn *{
+     color:white;
+   }
+   #backList{
+     color:var(--blue)
+   }
+   .list,.user,.profile{
+     padding:0;
+     margin:0;
+   }
+   #login{
+    background:var(--bg);
+    display:none;
+  }
+  #login .env{
+    width:90%;
+    height:auto;
+    overflow:auto;
+    border-radius:10px;
+    max-width:680px;
+    display:flex;
+    flex-flow:row wrap;
+    box-shadow:1px 1px 10px 0px rgb(196, 196, 196);
+  }
+  #login #info,#login #main{
+width:100%;
+margin:0 auto;
+  }
+  #login #info{
+    background-color:var(--blue);
+      background-size:100% 100%;
+    background-image:url("image/bb.png");
+    }
+    #login #info div{
+      background:rgba(12, 2, 49, 0.76);
+      height:100%;
+      width:100%;
+      padding:10px;
+      border-radius:10px;
+   
+       }
+  #login input{
+    width:100%;
+  }
+  #login #info *{
+    color:white;
+    }
+  #login #info h3 b,.app{
+    color:rgb(255, 0, 85);
+    text-shadow:1px 1px rgb(108, 0, 250),
+    1px 2px rgb(31, 6, 255),
+    2px 3px 5px white,
+    1px 4px rgb(248, 6, 107),
+    10px 10px rgba(0, 0, 0,0.3)
+  
+    ;
+  }
+  #login #main #img{
+    margin:0 auto;
+    width:100px;
+    height:100px;
+    border:10px solid rgb(234, 219, 253);
+    box-shadow:2px 2px 5px 0px rgb(217, 217, 219),
+    -2px -2px 5px 0px white;
+    
+  }
+  #login #main small{
+   color:rgb(49, 49, 49);
+     margin-lefT:3px;
+  }
+  #login input{
+    padding:10px;
+    border-radius:4px;
+
+  }
+  #inputCover{
+    width:100%;
+  }
+  #login #main #loginInput{
+    width:100%;
+    margin:0 auto;
+padding:1px;
+box-shadow:2px 2px 5px 0px rgb(217, 217, 219),
+-2px -2px 5px 0px white;
+border-radius:10px;
+ border:5px solid white;
+   
+  }
+  
+  #login #main #loginInput:hover{
+    background:white;
+    border:5px solid rgb(229, 222, 255);
+
+  }
+  #links{
+    width:100%;
+  }
+  button{
+    cursor:pointer !important;
+  }
+ #login label{
+    bordeR:none !important
+  }
+  #login .fa, #login #go{
+    border:5px solid white;
+padding:5px;
+border-radius:20px;
+  }
+#login #go{
+  padding:5px 10px;
+  border-radius:5px;
+  background:rgb(255, 0, 98);
+  margin-top:10px;
+  width:30%;
+  margin-left:70%;
+  box-shadow:2px 2px 5px 0px rgb(217, 217, 219),
+  -2px -2px 5px 0px white;
+color:white
+}
+#login .fa:hover,#login #go:hover{
+    background:rgb(166, 119, 255);
+    color:white !important;
+  }
+  @media screen and (min-width:500px){
+    .about .aboutEnv section{
+      width:50%;
+    }
+  #login #info,#login #main{
+    width:50% !important;
+    min-width:250px;
+  }
+  #login .env{
+    height:70% !important;
+  }
+  #menu div{
+right:auto;
+margin-left:-130px;
+  }
+  
+
+  #input .cntnt,#viewsCtn{
+    width:100% !important;
+  }
+  .list,.chats{
+    width:40%;
+   display:block;
+   }
+  .chats{
+    width:60%;
+  }
+  .user{
+    width:0;
+    display:none;
+  }
+  #backProfile,#backList{
+    display:none;
+      }
+}
+#views{
+  width:auto;
+  margin-top:-40px;
+  background:none;
+  color:white;
+  position:absolute;
+  padding:0px 20px;
+right:0;
+  }
+  #viewsCtn{
+    background:none;
+   
+  }
+  #views .seenBy{
+    max-width:63%;
+    width:auto;
+    overflow:auto !important;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-flow:row no wrap;
+  }
+  #viewsCtn img{
+    width:20px;
+    height:20px;
+    border-radius:10px;
+  }
+@media screen and (min-width:650px){
+  .user,.list{
+    width:25%;
+    display:block;
+  }
+ 
+  .chats,#input .cntnt{
+    width:50% !important;
+    display:block;
+  }
+  #viewsCtn{
+    width:45% !important;
+    }
+}
+#inputData{
+  border:5px solid var(--bg) !important;
+  padding:10px;
+  border-radius:3px;
+  width:100%;
+  background:white;
+}
+.about{
+  width:100%;
+  height:100%;
+  position:fixed;
+  padding:10px;
+  background:var(--bg);
+  overflow:auto;
+ 
+}
+.about .app{
+  font-weight:bolder;
+}
+.about .aboutEnv{
+  width:90%;
+  margin:0 auto;
+  box-shadow:1px 1px 10px 0px lightgrey;
+  border-radius:10px;
+ }
+.about .close:hover{
+text-decoration:underline;
+}
+.about .aboutEnv{
+height:auto;
+min-height:500px;
+}
+
+.about .aboutEnv #aboutContent{
+  background:white;
+}
+.about .aboutEnv section{
+  border-right:1px solid rgb(194, 192, 219);
+}
+.about .aboutEnv section{
+  color:dimgrey;
+  padding:10px;
+
+}
+#messagesRvd{
+  color:dimgrey;
+  font-size:x-large;
+}
+#messagesRvd b{
+  display:inline-block;
+   width:15px;
+  height:15px;
+  background:rgb(255, 0, 85);
+  color:white;
+  border-radius:7px;
+  font-size:small;
+transform:translate(-7px , -13px);
+}
+#contact{
+  width:100%;
+  min-height:150px;
+  background:var(--bg);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contactForm{
+  margin:0 auto;
+  box-shadow:1px 1px 10px 0px rgb(214, 213, 213);
+  border-radius:3;
+  padding:10px;
+  background:rgba(177, 177, 185, 0.74);
+}
+.sendContactForm{
+  padding:5px 10px;
+  background:var(--blue);
+  margin:2% 70%;
+  width:30%;
+color:white;
+border-radius:4px;
+}
+.sendContactForm:hover{
+  background:rgb(212, 0, 255);
+  
+}

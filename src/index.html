@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="lib/jquery3.js"></script>
+  <script src="lib/jquery.form.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lib/cssLibrary.css">
+  <title>LiteChat Group</title>
+</head>
+<body>
+  <form id="updateForm" action="ajaxServer.php" method="POST" enctype="multipart/form-data">
+  <input name="newImage" type="file" id="newImage" hidden>
+  <input name="newName" id="newName" hidden>
+  <input name="myId" id="newId" hidden>
+  <input name="imgB" id="imgB" hidden>
+  <input name="action" id="actionN" hidden>
+ 
+  </form>
+  
+  <div class="body">
+
+
+
+<div class="user"><div class="bg">
+<button id="backProfile" class="fa fa-arrow-left"></button>
+  <div class="flexCenter" id="profileImage"><div class="img">
+    <label for="newImage"  class="fa fa-camera"></label></div></div>
+  <button><i class="fa fa-edit"></i> Edit </button>
+
+  <div class="flexCenter" id="name">
+    Name<b>:</b><input class="edit" placeholder="Enter your name & update" style="padding:0px 10px;" contenteditable="true">
+  </div>
+<button class="update">Update</button></div>
+</div>
+
+
+
+<div class="chats">
+
+<div class="nav">
+
+<div class="flexBetween" id="topNav">
+  <span id="fa">Chats</span>
+  <div class="users"></div>
+ 
+ 
+  <span id="menu" class="fa fa-reorder">
+    <div>
+    <button id="viewUsers">Active Users <i class="fa fa-circle"></i></button>
+   <br> <button id="viewProfile">Edit Profile <i class="fa fa-user"></i></button>
+   <br> <button id="aboutApp">About <i class="fa fa-info"></i></button>
+  
+    </div>
+</span>
+
+</div>
+
+</div>
+
+<div id="board"> 
+ <div style="width:100%; display:flex; align-items:center; justify-content:center;" id="w3-padding w3-container w3-center"><i class="fa fa-spinner w3-xlarge"></i></div>
+</div>
+
+
+</div>
+
+<div class="list">
+  <button id="backList" class="fa fa-arrow-left"></button>
+<div  class="flexRound">
+ <div class="profileImage" id="img"><i class="fa fa-circle"></i></div>
+  <p id="peopleActive">people active will appear here </p>
+</div>
+  <div id="userImg" class="flexBetween">
+    <div class="flexBetween" id="search">
+      <input placeholder="Search Aa"><button class="fa fa-search"></button></div>
+  </div>
+<span style="padding:0px 10px; color:grey; font-family:cursive;">People active now</span>
+<div id="allUsersCtn">
+
+<div class="flexRound" id="member">
+<div id="img"><i class="fa fa-circle"></i></div>
+<span>Samson John</span><button class="fa fa-ellipsis-v"></button>
+</div>
+
+
+
+
+
+
+  </div>
+
+</div>
+</div>
+
+<div class="flexCenter" id="viewUser" style="display:none;">
+  
+  <div id="ctn">
+   
+    <img><br>
+<span>Samson Monday</span><br>
+<button class="close">Back</button>
+ 
+</div>
+</div>
+
+ 
+
+
+<div class="flexBetween" id="input">
+  <div class="cntnt">
+  
+<div id="views" class="flexCenter" hidden><!--show viewers-->
+ <div id="viewsCtn" class="flexEnd">
+ <i style="font-family:'Times New Roman', Times, serif;word-break:keep-all; padding :0px 20px;"> 
+   your message seen by </i>  
+<div class="seenBy">
+  <div>
+  <img src="images/797a0e33b6ce8c5.jpg">
+  </div>
+</div>
+
+</div>
+</div><!--end viewers-->
+  
+   <div class="flexRound">
+    <label class="fa fa-image"></label>
+
+    <form hidden>
+      <input name="file" type="file">
+    </form>
+
+  <textarea name="message" placeholder="type message Ex: Hello Group"></textarea>
+<button id="send" class="fa fa-paper-plane"></button>
+</div>
+</div>
+</div>
+
+<div class="flexCenter" id="login">
+ <div class="env">
+
+  <div class="flexCenter" id="info"><div class="flexCenter" ><span>
+    <h3> login to <br>
+      <i><b>LiteChat</b></i><br>
+       <sub>only your name and picture are required<br>
+       <small><i>Best app for group chat</i></small></sub></h3>
+ </span> 
+  </div> </div>
+
+  <div class="flexCenter" id="main">
+    <div id="inputCover">
+
+  <div id="img"><label for="image" class="fa fa-camera"></label></div>
+  <small>Name:</small>
+
+     <form method="post" action="ajaxServer.php" enctype="multipart/form-data">
+ 
+  <div id="loginInput">
+
+      <input id="image" type="file" name="userProfileImage" hidden> 
+      <input id="name" name="newUserName" placeholder="Enter Your Name">
+     </div>
+     </form>
+
+<br>
+
+<div class="flexRound" id="links">
+<i class="fa fa-google"></i>
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+</div>
+<button id="go">Go</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="about" style="display:none;">
+  <div class="aboutEnv w3-block">
+  <button class="close" style="color:blue">back to chat</button>
+  <button class="fa fa-commenting" id="messagesRvd"><b class="w3-center"></b></button>
+<h3 style="text-align:center;"><small style="font-family:cursive">About </small><span class="app">LiteChat</span></h3>
+<br><br>
+<div class="flexRound" id="aboutContent" style="flex-flow:row wrap;">
+<section><h3>About</h3>
+This app is isn't  functional like other social medias apps 
+it take your input data and make it public to others to see and allow you to reply.<br> feels like room...
+its developed just for programming practice by <a href="" style="text-decoration:underline;"> Austine Samuel </a><sub>Fullstack web developer @ Nigeria. </sub>
+<br>
+if you feel this app can get featured contact me social media
+
+<div id="links" class="flexRound" style="width:max-content">
+ <a href=""><button class="fa fa-facebook"></button></a>
+ <a href="tel:+2348063202017"><button class="fa fa-phone"></button></a>
+</div>
+<a href="mail:austinesamuel914@gmail.com">austinesamuel914@gmail.com</button></a>
+
+<br><br>
+</section>
+<section style="border:none;">
+  <h3>Share your thoughts</h3>
+  <sub>share your thoughts about this app , message will surely be delivered!</sub><br>
+
+<br><div class="contactForm"><label style="font-weight:bolder; color:black">Say Somthing</label><br>
+  <label>Email or Phone Number</label><br>
+  <input id="inputData" placeholder="Enter Email or phone num"><br>
+  <label>Say Somthing</label><br>
+<textarea id="contact" placeholder="write something about liteChat eg : its awesome, but it will be beter if you will add more functionals like other social media apps">
+  
+</textarea>
+<br>
+<button class="sendContactForm">Submit</button>
+</div>
+</section>
+
+</div><br> <button class="close" style="color:blue">back to chat</button>
+<br>
+</div>
+
+
+</body>
+<script src="script.js"></script>
+<script src="animate.js"></script>
+<script src="lib/MfunctionsLap.js"></script>
+</html>
